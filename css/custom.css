@@ -1,0 +1,15 @@
+/* 白天网站背景/颜色 */
+#web_bg {
+ background: linear-gradient(90deg,  rgba(243, 85, 154, 0.1) 15%, rgba(243, 74, 122, 0.1) 30%, rgba(161, 102, 171, .1) 44%, rgba(16, 152, 173, .1) 72%, rgba(7, 179, 155, .1) 86%, rgba(109, 186, 130, .1))
+}
+
+/* 夜间网站背景/颜色 */
+[data-theme=dark] #web_bg {
+ background: 
+}
+
+#rightside>div>a:hover, #rightside>div>button:hover {
+    background-color: var(--btn-hover-color);
+    /* width: 115px;
+    border-radius: 18px */
+}

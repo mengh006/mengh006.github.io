@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hyingmei</title><meta name="author" content="hyingmei,hyingmei@qq.com"><meta name="copyright" content="hyingmei"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hyingmei Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hyingmei">
+<meta property="og:url" content="http://localhost:4000/index.html">
+<meta property="og:site_name" content="Hyingmei">
+<meta property="og:description" content="Hyingmei Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="hyingmei">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Hyingmei",
+  "url": "http://localhost:4000/"
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://localhost:4000/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hyingmei',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/fonts/LXGWWenKai/LXGWWenKai.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom1.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="undefined" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div class="float-box left top"></div><div class="float-box left bottom"></div><div class="float-box right top"></div><div class="float-box right bottom"></div><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (true) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div class="background dark patterns" style="background-image: url(/img/svg.svg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items visible"><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-home"></i><span> 我的</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fas fa-comment-dots"></i><span> 说说</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-thumbs-up"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-user-group"></i><span> 友链</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于本人</span></a></li><li><a class="site-page child" href="/essay/"><i class="fa-fw fas fa-comment-dots"></i><span> 闲言碎语</span></a></li><li><a class="site-page child" href="javascript:toRandomPost()"><i class="fa-fw fa-solid fa-bus-simple"></i><span> 随便逛逛</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header"><nav id="nav"><div class="more-app-btn"><i class="fa-fw fas fa-spiral fa-flip-both"></i><div class="more-app-list-groups"><div class="more-app-list-group"><div class="more-app-list-title">本站服务</div><div class="more-app-list"><a class="more-app-list-item" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="安知鱼主题"><i class="fa-fw more-app-item-icon fas fa-archive"></i><span class="more-app-item-text">安知鱼主题</span></a><a class="more-app-list-item" target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly" title="Butterfly主题"><i class="fa-fw more-app-item-icon fa-solid fa-palette"></i><span class="more-app-item-text">Butterfly主题</span></a><a class="more-app-list-item" target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" title="Hexo"><i class="fa-fw more-app-item-icon fa-solid fa-circle-info"></i><span class="more-app-item-text">Hexo</span></a><a class="more-app-list-item" target="_blank" rel="noopener" href="https://github.com/lxgw/LxgwWenKai/" title="LXGW WenKai"><i class="fa-fw more-app-item-icon fas fa-font"></i><span class="more-app-item-text">LXGW WenKai</span></a><a class="more-app-list-item" target="_blank" rel="noopener" href="https://github.com/DejavuMoe/webfonts" title="Web 字体"><i class="fa-fw more-app-item-icon fas fa-cloud"></i><span class="more-app-item-text">Web 字体</span></a></div></div><div class="more-app-list-group"><div class="more-app-list-title">网站</div><div class="more-app-list"><a class="more-app-list-item" href="/" title="个人博客"><i class="fa-fw more-app-item-icon fas fa-house-chimney"></i><span class="more-app-item-text">个人博客</span></a><a class="more-app-list-item" target="_blank" rel="noopener" href="https://github.com/meng006" title="Github"><i class="fa-fw more-app-item-icon fa-brands fa-github"></i><span class="more-app-item-text">Github</span></a><a class="more-app-list-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="安知鱼"><i class="fa-fw more-app-item-icon fas fa-blog"></i><span class="more-app-item-text">安知鱼</span></a><a class="more-app-list-item" target="_blank" rel="noopener" href="https://youtube.com" title="youtube"><i class="fa-fw more-app-item-icon fa-brands fa-youtube"></i><span class="more-app-item-text">youtube</span></a><a class="more-app-list-item" target="_blank" rel="noopener" href="https://youtube.com" title="Google"><i class="fa-fw more-app-item-icon fa-brands fa-google"></i><span class="more-app-item-text">Google</span></a><a class="more-app-list-item" target="_blank" rel="noopener" href="https://youtube.com" title="X"><i class="fa-fw more-app-item-icon fa-brands fa-x-twitter"></i><span class="more-app-item-text">X</span></a><a class="more-app-list-item" target="_blank" rel="noopener" href="https://www.bilibili.com" title="BiliBili"><i class="fa-fw more-app-item-icon fa-brands fa-bilibili"></i><span class="more-app-item-text">BiliBili</span></a></div></div></div></div><span id="blog-info"><a class="nav-site-title" href="/" title="回到主页"><span class="site-name">Hyingmei</span></a></span><div id="menus"></div><div class="menus_items visible"><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-home"></i><span> 我的</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fas fa-comment-dots"></i><span> 说说</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-thumbs-up"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-user-group"></i><span> 友链</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于本人</span></a></li><li><a class="site-page child" href="/essay/"><i class="fa-fw fas fa-comment-dots"></i><span> 闲言碎语</span></a></li><li><a class="site-page child" href="javascript:toRandomPost()"><i class="fa-fw fa-solid fa-bus-simple"></i><span> 随便逛逛</span></a></li></ul></div></div><div id="mask-name-container" style="z-index: -1"></div><center id="name-container"><a id="page-name" href="javascript:btf.scrollToDest(0, 500)">PAGE_NAME</a></center><div id="nav-right"><div id="travellings"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html" title="友链接力-随机开往"><i class="fa-solid fa-bus-simple"></i></a></div><div id="random"><a class="site-page" href="javascript:toRandomPost()" title="随机前往一个文章"><i class="fa-solid fa-shuffle"></i></a></div><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="站内搜索"><i class="fas fa-search"></i></a><!--#he-plugin-simple--></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="展开菜单"><i class="fas fa-bars"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hyingmei</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/hyingmei" target="_blank" title="Github"><i class="fab fa-github fa-lg" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:hyingmei@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope fa-lg" style="color: #000000;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><div id="top-main"><div class="bbTimeList container" id="bbTimeList"><i class="bber-logo fas fa-message" onclick="pjax.loadUrl(&quot;/essay/&quot;);" title="即刻短文" href="javascript:void(0);"></i><div class="swiper-container swiper-no-swiping" id="bbtalk" tabindex="-1"><div class="swiper-wrapper" id="bber-talk" onclick="pjax.loadUrl(&quot;/essay/&quot;);"><div class="li-style swiper-slide" href="javascript:void(0);">安知鱼主题指南</div><div class="li-style swiper-slide" href="javascript:void(0);">支持了Accesskey快捷键，可以直接按下shift + ?组合键以查看快捷键选项。 [图片]</div><div class="li-style swiper-slide" href="javascript:void(0);">音乐支持了参数设置自定义歌单</div><div class="li-style swiper-slide" href="javascript:void(0);">关于页的打赏仿了b站的充电功能，使用svg绘图➕一些动画参数移动，应该不会被b站警告吧😜，另外文章也支持了顶部随机b站同款春秋冬banner。</div><div class="li-style swiper-slide" href="javascript:void(0);">React中不能直接修改state的一个重要原因是在性能优化时的prueComponment会进行浅层比较会认为是用一个对象且不能进入队列中批量更新</div><div class="li-style swiper-slide" href="javascript:void(0);">好耶，马上就可以放假回家了！好想家里的好吃的😋！才不是想捏妹妹的脸了</div><div class="li-style swiper-slide" href="javascript:void(0);">全局音乐的动画也处理好了, nice!</div><div class="li-style swiper-slide" href="javascript:void(0);">把页脚, 首页顶部全都魔改到本地了, 方便后续魔改, 音乐也改成胶囊的样式了, 其实还是想让胶囊可拖拽, 不可点击改变歌词位置的, 但是弄了半天都没弄好就放弃了</div><div class="li-style swiper-slide" href="javascript:void(0);">朋友圈船新版本终于写完了, 耶✌️</div><div class="li-style swiper-slide" href="javascript:void(0);">终于把相册集搞定了, 耶✌️, 瀑布流在滑动滚动条一个视口范围上下100的情况执行一次, 到底部停止监听让性能高了好多，再也不会布局混乱🤪了</div></div></div><i class="bber-gotobb fas fa-arrow-circle-right" onclick="pjax.loadUrl(&quot;/essay/&quot;);" href="javascript:void(0);" title="查看全文"></i></div><script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" data-pjax=""></script></div><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="category-bar" id="category-bar"><div class="category-bar-items home" id="category-bar-items"><div class="category-bar-item select" id="category-bar-home"><a href="/">推荐</a></div><div class="category-bar-item" id="教程"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></div><div class="category-bar-item" id="博客魔改"><a href="/categories/%E5%8D%9A%E5%AE%A2%E9%AD%94%E6%94%B9/">博客魔改</a></div><div class="category-bar-item" id="杂谈教程"><a href="/categories/%E6%9D%82%E8%B0%88%E6%95%99%E7%A8%8B/">杂谈教程</a></div><div class="category-bar-item"><a href="/archives/">归档</a></div></div><div class="category-bar-right"><a class="category-bar-more" href="/categories/">更多</a></div></div><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/posts/38dd/" title="Markdown使用教程"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown使用教程"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/38dd/" title="Markdown使用教程">Markdown使用教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-09-03T16:05:21.000Z" title="发表于 2025-09-04 00:05:21">2025-09-04</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-04T05:19:16.805Z" title="更新于 2025-09-04 13:19:16">2025-09-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Markdown/">Markdown</a></span></div><div class="content">教程这是一篇讲解如何正确使用 Markdown 的排版示例，学会这个很有必要，能让你的文章有更佳清晰的排版。  引用文本：Markdown is a text formatting syntax.  引用文本   语法指导普通内容这段内容展示了在内容里面一些排版格式，比如：  加粗 - **加粗** 倾斜 - *倾斜* 删除线 - ~~删除线~~ Code 标记 - `Code 标记` 超级链接 - [超级链接](https://lddgo.net) username@gmail.com - [username@gmail.com](mailto:username@gmail.com)  大标题 - Heading 3你可以选择使用 H1 至 H6，使用 ##(N) 打头。  NOTE: 别忘了 # 后面需要有空格！  Heading 4Heading 5Heading 6图片12![alt 文本](http://image-path.png)![alt 文本](http://image-path.png &quot;图片 Title 值&quot;)   代码块普通123*em...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/lf33/" title="Butterfly魔改日记"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly魔改日记"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/lf33/" title="Butterfly魔改日记">Butterfly魔改日记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-24T09:29:32.000Z" title="发表于 2025-08-24 17:29:32">2025-08-24</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-01T14:41:29.400Z" title="更新于 2025-09-01 22:41:29">2025-09-01</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Butterfly/">Butterfly</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Hexo/">Hexo</a></span></div><div class="content">导航栏美化 回到顶部需要调用的方法是在右键菜单中定义的方法,而没有这个方法的同学,可以自行修改nav.pug中的rmf.scrollToTop()方法为btf.scrollToDest(0, 500)方法  导航栏下滑时会显示标题，因此我们需要将这部分内容添加进来。修改 [root]\themes\butterfly\layout\includes\header\nav.pug 文件中下方代码标出来的内容，去掉加号即为正常缩进。  修改nav.pug  1234567891011121314151617181920212223242526272829303132nav#nav  span#blog-info    a(href=url_for(&#x27;/&#x27;) title=&quot;回到主页&quot;)      if theme.nav.logo        img.site-icon(src=url_for(theme.nav.logo))      if theme.nav.display_title        span.site-name=confi...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/1c9e/" title="如何使用Font-Awesome"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何使用Font-Awesome"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1c9e/" title="如何使用Font-Awesome">如何使用Font-Awesome</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-23T09:07:00.000Z" title="发表于 2025-08-23 17:07:00">2025-08-23</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-23T14:36:12.304Z" title="更新于 2025-08-23 22:36:12">2025-08-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82%E8%B0%88%E6%95%99%E7%A8%8B/">杂谈教程</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="content"> Font Awesome 以其灵活性和易用性而闻名，允许通过简单的代码行来为图标应用 CSS 样式并将其集成到网页项目中。  1. 通过 CSS CDN 使用 Font Awesome对于个人开发和测试，可以直接使用免费的 CSS CDN 地址来集成 Font Awesome，或者通过 npm（Node 包管理器）安装。使用 免费公共 CDN 来包含 Font Awesome 是一种更方便的方法，因为它允许您仅通过在网页上包含一个链接来使用 Font Awesome 图标。以下是提供 Font Awesome 免费 CDN 的一些网站：  cdnjs  Font Awesome 的免费 CDN 链接参考： https://cdnjs.com/libraries/font-awesome 1&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css&quot; /&gt;   jsDelivr  F...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/22ac/" title="安知鱼主题美化及实用教程库"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安知鱼主题美化及实用教程库"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/22ac/" title="安知鱼主题美化及实用教程库">安知鱼主题美化及实用教程库</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-22T05:39:56.000Z" title="发表于 2025-08-22 13:39:56">2025-08-22</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-23T14:34:43.949Z" title="更新于 2025-08-23 22:34:43">2025-08-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E9%AD%94%E6%94%B9/">博客魔改</a></span></div><div class="content">恢复原 butterfly 页面头图修改博客目录 /themes/anzhiyu/layout/includes/header/index.pug大约在第 24 行 123header#page-header(class=`$&#123;isHomeClass&#125;` style=home_index_img_bg)# 改为header#page-header(class=`$&#123;isHomeClass&#125;` style=`$&#123;top_img&#125;`)   注意：这个 top_img 填写的是 css 样式，不是直接填链接就行了  1234567---title: 标签type: &quot;tags&quot;comments: falseaside: falsetop_img: background-image:url(图片地址); background-size:100%---   添加网站背景图 &#x2F; 背景颜色修改在你的 博客目录/source/css/custom.css 中添加以下内容，source 里没有这个 css目录...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/f0aa/" title="Butterfly如何优雅的改字体"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly如何优雅的改字体"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/f0aa/" title="Butterfly如何优雅的改字体">Butterfly如何优雅的改字体</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-21T09:39:31.000Z" title="发表于 2025-08-21 17:39:31">2025-08-21</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-26T13:25:46.238Z" title="更新于 2025-08-26 21:25:46">2025-08-26</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Hexo/">Hexo</a></span></div><div class="content"> 个人博客属于比较特殊类的网站，如果你需要修改字体，请务必保证你下载的字体获得授权或者可以免费使用  前言本篇教程不涉及源码修改，可放心食用，一定要注意版权哦~~ 字体下载推荐几个免费的字体网站：  Free Fonts  字体 Google Fonts | 谷歌字体中文版 Adobe Fonts 站酷字库 - 付费字体 &amp; 免费字体 - 站酷 (ZCOOL) 字体天下-提供各类字体的免费下载和在线预览服务 https://github.com/microsoft/cascadia-code  最后一个是微软的开源连体字，作为代码字体是很舒服的。 开始修改首先创建一个css文件： 12345@font-face &#123;  font-family: &#x27;CascadiaCodePL&#x27;;  font-display: swap;  src: url(&#x27;/butterflyChange/fonts/CascadiaCodePL.ttf&#x27;) format(&quot;truetype&quot;);&#125; url 可自行修改，可以...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/d4de/" title="CSS字体引入"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS字体引入"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/d4de/" title="CSS字体引入">CSS字体引入</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-21T08:45:54.000Z" title="发表于 2025-08-21 16:45:54">2025-08-21</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-21T09:33:14.348Z" title="更新于 2025-08-21 17:33:14">2025-08-21</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Hexo/">Hexo</a></span></div><div class="content">免费引入商用黑体字体系列整理及 CSS 字体引入亲妈式教程（20240915更新）字体家族优化指南：替代微软雅黑的现代方案 由于微软雅黑的设计较为老旧，许多网站在设置font-family字体家族时，会优先引入苹果的苹方字体（PingFang SC）。这样既能照顾 macOS 用户，也能改善 Windows 上的显示效果（需提前安装苹方字体）。  更新说明  20240915 更新说明    去除失效链接   增加 MiSans 可变字体链接   增加快看世界体  20230606 更新说明    增加了阿里妈妈系列三款字体：方圆体&#x2F;灵动体&#x2F;刀隶体 web 引用链接  20230405 更新说明    增加了钉钉进步体、阿里妈妈东方大楷 web 引用链接  20230312 更新说明    增加了钉钉进步体和斗鱼追光体文件下载链接（暂未提供 web 引用链接）   标注华康金刚黑授权性质（请谨慎使用）   优化排版  20230306 更新说明    增加了阿里妈妈数黑体 CDN 链接   标注 CDN 公开性质   优化部分说明文案   优化排版  2022...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/5730/" title="EasyX图形库详细使用指南"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="EasyX图形库详细使用指南"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/5730/" title="EasyX图形库详细使用指南">EasyX图形库详细使用指南</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-20T11:36:42.000Z" title="发表于 2025-08-20 19:36:42">2025-08-20</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-20T11:45:21.201Z" title="更新于 2025-08-20 19:45:21">2025-08-20</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/EasyX/">EasyX</a></span></div><div class="content">EasyX 图形库详细使用指南 目录 基础配置   图形绘制   颜色与样式   文本处理   图像操作   消息处理   高级功能   示例代码   一、基础配置1. 初始化图形窗口1HWND initgraph(int width, int height, int flag = 0);  功能：创建并显示一个图形窗口。 参数： width, height：窗口的宽度和高度。 flag：窗口属性标志（可选组合）： EX_SHOWCONSOLE：保留控制台窗口。 EX_NOCLOSE：禁用关闭按钮。 EX_NOMINIMIZE：禁用最小化按钮。 EX_DBLCLKS：启用双击事件。     返回值：窗口句柄（HWND）。  2. 关闭窗口1void closegraph();  功能：关闭图形窗口并释放资源。   二、图形绘制1. 基础图形12345678910111213141516// 绘制直线（起点到终点）line(int x1, int y1, int x2, int y2);// 绘制矩形（空心/实心）rectangle(int left, int top, int r...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/3eeb/" title="Hello World"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/3eeb/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-20T09:35:34.214Z" title="发表于 2025-08-20 17:35:34">2025-08-20</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-20T11:45:14.846Z" title="更新于 2025-08-20 19:45:14">2025-08-20</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote sites1$ hexo deploy  More info: Deployment </div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">hyingmei</div><div class="author-info-description">可可爱爱</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/hyingmei"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/hyingmei" target="_blank" title="Github"><i class="fab fa-github fa-lg" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:hyingmei@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope fa-lg" style="color: #000000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><div id="welcome-info"></div></div></div><div class="card-widget" id="card-poem"><div id="poem_sentence"></div><div id="poem_info"><div id="poem_dynasty"></div><div id="poem_author"></div></div></div><script src="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/jinrishici.js" charset="utf-8"></script><script type="text/javascript">jinrishici.load(function(result) {
+var sentence = document.querySelector("#poem_sentence")
+var author = document.querySelector("#poem_author")
+var dynasty = document.querySelector("#poem_dynasty")
+
+var sentenceText = result.data.content
+sentenceText = sentenceText.substr(0, sentenceText.length - 1);
+sentence.innerHTML = sentenceText
+dynasty.innerHTML = result.data.origin.dynasty
+author.innerHTML = result.data.origin.author + '《' + result.data.origin.title + '》'
+});</script><div class="card-widget card-countdown"><div class="item-content"><div class="cd-count-left">
+  <span class="cd-text">距离</span>
+  <span class="cd-name" id="eventName"></span>
+  <span class="cd-time" id="daysUntil"></span>
+  <span class="cd-date" id="eventDate"></span>
+</div>
+<div id="countRight" class="cd-count-right"></div>
+</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/38dd/" title="Markdown使用教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown使用教程"/></a><div class="content"><a class="title" href="/posts/38dd/" title="Markdown使用教程">Markdown使用教程</a><time datetime="2025-09-03T16:05:21.000Z" title="发表于 2025-09-04 00:05:21">2025-09-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/lf33/" title="Butterfly魔改日记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly魔改日记"/></a><div class="content"><a class="title" href="/posts/lf33/" title="Butterfly魔改日记">Butterfly魔改日记</a><time datetime="2025-08-24T09:29:32.000Z" title="发表于 2025-08-24 17:29:32">2025-08-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1c9e/" title="如何使用Font-Awesome"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何使用Font-Awesome"/></a><div class="content"><a class="title" href="/posts/1c9e/" title="如何使用Font-Awesome">如何使用Font-Awesome</a><time datetime="2025-08-23T09:07:00.000Z" title="发表于 2025-08-23 17:07:00">2025-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/22ac/" title="安知鱼主题美化及实用教程库"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安知鱼主题美化及实用教程库"/></a><div class="content"><a class="title" href="/posts/22ac/" title="安知鱼主题美化及实用教程库">安知鱼主题美化及实用教程库</a><time datetime="2025-08-22T05:39:56.000Z" title="发表于 2025-08-22 13:39:56">2025-08-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f0aa/" title="Butterfly如何优雅的改字体"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly如何优雅的改字体"/></a><div class="content"><a class="title" href="/posts/f0aa/" title="Butterfly如何优雅的改字体">Butterfly如何优雅的改字体</a><time datetime="2025-08-21T09:39:31.000Z" title="发表于 2025-08-21 17:39:31">2025-08-21</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Butterfly/" style="font-size: 1.15em; color: rgb(68, 140, 50);">Butterfly<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 1.45em; color: rgb(115, 114, 111);">Hexo<sup>3</sup></a><a href="/tags/EasyX/" style="font-size: 1.15em; color: rgb(166, 50, 175);">EasyX<sup>1</sup></a><a href="/tags/Markdown/" style="font-size: 1.15em; color: rgb(198, 153, 71);">Markdown<sup>1</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.15em; color: rgb(157, 111, 68);">教程<sup>1</sup></a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/09/">
+            <span class="card-archive-list-date">
+              2025 九月
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/08/">
+            <span class="card-archive-list-date">
+              2025 八月
+            </span>
+            <span class="card-archive-list-count">7</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">8</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">9.5k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-09-08T13:02:46.672Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By hyingmei</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.3</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = [].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  btf.getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js')
+    .then(() => {
+      jinrishici.load(result => {
+        if (result && result.data && result.data.content) {
+          typedJSFn.processSubtitle(result.data.content)
+        } else {
+          throw new Error('Failed to parse the return value of Jinrishici API')
+        }
+      })
+    })
+    .catch(err => {
+      console.error('Failed to get the Jinrishici API:', err)
+      typedJSFn.processSubtitle(0)
+    })
+}
+typedJSFn.run(subtitleType)
+</script></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@VERSION/pjax.min.js"></script><script src="random.js"></script><script src="/js/rightmenu.js"></script><script src="/js/add.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward" onclick="window.history.back()"><i class="fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward" onclick="window.history.forward()"><i class="fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh" onclick="location.reload()"><i class="fa-solid fa-arrow-rotate-right"></i></div><div class="rightMenu-item" id="menu-home" onclick="btf.scrollToDest(0, 500)"><i class="fa-solid fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" onclick="toRandomPost()"><i class="fa-solid fa-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/archives/"><i class="fa-solid fa-archive"></i><span>文章归档</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="fa-solid fa-folder-open"></i><span>文章分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="fa-solid fa-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuNormal"><div class="rightMenu-item" id="menu-translate" onclick="window.translateFn.translatePage()"><i class="fa-solid fa-earth-asia"></i><span>繁简模式切换</span></div><div class="rightMenu-item" id="menu-darkmode"><i class="fa-solid fa-moon"></i><span>切换亮暗模式</span></div></div></div><div id="rightmenu-mask" onclick="RemoveRightMenu()"></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer');
+    var item_html = '<footer id="footer" style="background: transparent"><div id="footer_icons"><div><a class="icon_link" target="_blank" rel="noopener external nofollow" href="https://www.my.cn" title="个人主页"><i class="fa-solid fa-compass"></i></a><a class="icon_link" target="_blank" rel="noopener external nofollow" href="https://res.abeim.cn/api/qq/?qq=3486625287" title="联系QQ"><i class="fa-brands fa-qq"></i></a><a class="icon_link" href="/wechat/" title="联系微信" data-pjax-state="data-pjax-state"><i class="fa-brands fa-weixin"></i></a><a class="icon_link" target="_blank" rel="noopener external nofollow" href="mailto:3486625287@qq.com" title="发送邮件"><i class="fa-solid fa-envelope"></i></a></div><img class="footer_logo" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="null" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><div><a class="icon_link" target="_blank" rel="noopener external nofollow" href="https://github.com" title="Github主页"><i class="fa-brands fa-github"></i></a><a class="icon_link" target="_blank" rel="noopener external nofollow" href="https://space.bilibili.com" title="哔哩哔哩主页"><i class="fa-brands fa-bilibili"></i></a><a class="icon_link" href="/stars/" title="藏宝阁" data-pjax-state="data-pjax-state"><i class="fa-solid fa-star"></i></a><a class="icon_link" href="/message/" title="留言" data-pjax-state="data-pjax-state"><i class="fa-solid fa-comment"></i></a></div></div><div id="footer_content"><div class="footer-group"><h3 class="footer-title">直达</h3><div class="footer-links"><a class="footer-item" href="/stars/" data-pjax-state="data-pjax-state">藏宝阁</a><a class="footer-item" href="/sentence/" data-pjax-state="data-pjax-state">优秀句子</a><a class="footer-item" href="/zone/" data-pjax-state="data-pjax-state">空间说说</a><a class="footer-item" href="/fcircle/" data-pjax-state="data-pjax-state">友链订阅</a><a class="footer-item" href="/bg/" data-pjax-state="data-pjax-state">切换背景</a></div></div><div class="footer-group"><h3 class="footer-title">关于</h3><div class="footer-links"><a class="footer-item" href="/about/" data-pjax-state="data-pjax-state">关于我</a><a class="footer-item" href="/atom.xml" data-pjax-state="data-pjax-state">RSS订阅</a><a class="footer-item" target="_blank" href="https://uptime.top/">站点监控</a><a class="footer-item" href="/timeline/" data-pjax-state="data-pjax-state">更新记录</a><a class="footer-item" href="/picture/" data-pjax-state="data-pjax-state">我的相册</a></div></div><div class="footer-group"><h3 class="footer-title">分类</h3><div class="footer-links"><a class="footer-item" href="/categories/博客相关" data-pjax-state="data-pjax-state">博客相关</a><a class="footer-item" href="/categories/生活点滴" data-pjax-state="data-pjax-state">生活点滴</a><a class="footer-item" href="/categories/资源分享" data-pjax-state="data-pjax-state">资源分享</a><a class="footer-item" href="/categories/学习笔记" data-pjax-state="data-pjax-state">学习笔记</a><a class="footer-item" href="/categories/实用教程" data-pjax-state="data-pjax-state">实用教程</a><a class="footer-item" href="/categories/" data-pjax-state="data-pjax-state">查看全部</a></div></div></div><div id="footer-bottom"><div class="footer-bottom-content"><div class="footer-bottom-left"><span class="copyright">&copy;2025 By <a target="_blank" rel="noopener" href="https://my.top/" title="点击访问&quot;hyingmei&quot;的主页" style="margin-left:5px">hyingmei</a></span><div><a class="footer-bottom-link" target="_blank" href="https://rainyun.com/" rel="noopener external nofollow" title="本站CDN支持">雨云</a><a class="footer-bottom-link" target="_blank" href="https://www.netdun.net/" rel="noopener external nofollow" title="本站CDN防护主要提供商:网盾星球">网盾星球</a></div></div><div class="footer-bottom-right"><div id="runtime" title="已运行时长">本站已运行：0 天 0 时 0 分 0 秒</div><div><a class="footer-bottom-link" target="_blank" href="https://hexo.io/zh-cn/" rel="noopener external nofollow" title="框架">Hexo</a><a class="footer-bottom-link" target="_blank" href="https://butterfly.js.org/" rel="noopener external nofollow" title="主题">Butterfly</a></div></div></div></div></footer>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.innerHTML=item_html
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script defer src="undefined"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementsByClassName('recent-posts')[0];
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/lf33/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-08-24</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/lf33/&quot;);" href="javascript:void(0);" alt="">Butterfly魔改日记</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！快点进来瞧瞧！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/lf33/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/f0aa/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-08-21</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/f0aa/&quot;);" href="javascript:void(0);" alt="">Butterfly如何优雅的改字体</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！快点进来瞧瞧！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/f0aa/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/1c9e/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-08-23</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/1c9e/&quot;);" href="javascript:void(0);" alt="">如何使用Font-Awesome</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！快点进来瞧瞧！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/1c9e/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/22ac/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-08-22</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/22ac/&quot;);" href="javascript:void(0);" alt="">安知鱼主题美化及实用教程库</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！快点进来瞧瞧！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/22ac/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>
